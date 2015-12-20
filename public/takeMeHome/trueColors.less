@@ -38,6 +38,14 @@ html, body {
     height: 100%;
     box-sizing: border-box;
     padding: 150px;
+    transition: @defaultTransition;
+
+    @media (max-width: 765px) {
+      padding: 150px 50px;
+    }
+    @media (max-width: 563px) {
+      padding: 100px 10px;
+    }
 
     h1, h3 {
       margin: 0;
@@ -46,10 +54,18 @@ html, body {
     h1 {
       font-size: 5em;
       color: @darkFont;
+
+      @media (max-width: 563px) {
+        font-size: 13vw;
+      }
     }
     h3 {
       font-size: 1.2em;
       color: @phillGray;
+
+      @media (max-width: 563px) {
+        font-size: 4vmin;
+      }
     }
   }
   .deets {
@@ -57,8 +73,12 @@ html, body {
     margin: 0 auto;
     padding-top: 30px;
     padding-bottom: 50px;
+    transition: @defaultTransition;
     p:last-child {
       text-align: right;
+    }
+    @media (max-width: 430px) {
+      width: 90%;
     }
   }
   .usage {
@@ -73,6 +93,14 @@ html, body {
     box-sizing: border-box;
     padding: 20px;
     margin-bottom: 50px;
+
+    @media (max-width: 430px) {
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      flex-direction: column;
+    }
 
     .in, .out {
       overflow: hidden;
@@ -98,17 +126,29 @@ html, body {
     }
     .input, .output {
       width: 50%;
+      @media (max-width: 430px) {
+        width: 100%;
+      }
     }
     .input {
       flex: 2 1 auto;
       padding-right: 10px;
       box-sizing: border-box;
       border-right: 1px solid #ccc;
+
+      @media (max-width: 430px) {
+        border-right: none;
+        padding-right: 0;
+        padding-bottom: 50px;
+      }
     }
     .output {
       flex: 1 2 auto;
       padding-left: 10px;
       box-sizing: border-box;
+      @media (max-width: 430px) {
+        padding-left: 0;
+      }
     }
   }
 }
@@ -140,11 +180,20 @@ html, body {
   .creds {
     text-align: center;
     color: @darkFont;
+    @media (max-width: 430px) {
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
   }
   .links {
     text-align: center;
     display: flex;
     justify-content: space-around;
+
+    @media (max-width: 430px) {
+      box-sizing: border-box;
+      padding: 0 10px;
+    }
     li {
       display: inline-block;
       color: lighten(@darkFont, 40%);
@@ -158,10 +207,10 @@ html, body {
           background-size:contain;
           background-repeat: no-repeat;
           background-position: center left;
-          padding-left: 30px;
+          padding-left: 25px;
           padding-right: 5px;
-          padding-top: 5px;
-          padding-bottom: 5px;
+          padding-top: 1px;
+          padding-bottom: 1px;
           border-radius: 3px;
         }
       }
