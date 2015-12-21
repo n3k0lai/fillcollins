@@ -33,7 +33,10 @@ html, body {
   .header {
     position: relative;
     display: block;
-    background-image: @placeholder;
+    background-image: linear-gradient(fade(@highlight, 40%), rgba(0, 0, 0, 0.7)), @placeholder;
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
     text-align: center;
     height: 100%;
     box-sizing: border-box;
