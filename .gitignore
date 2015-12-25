@@ -15,4 +15,4 @@
 /tmp
 
 .DS_Store
-/images/generated
+# /images/generated
