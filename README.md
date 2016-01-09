@@ -12,7 +12,7 @@
 <p>In your DOM (or wherever), simply place this url wherever you wish the image to be rendered <br/>
 
 ```
-http://www.fillcollins.place/300/300 
+www.fillcollins.place/300/300 
 ```
 
 <br/>
@@ -20,14 +20,14 @@ The key points to note are the sequence of numbers after ".place". Those numbers
 <p>You can also invoke a square image (height equal to width) by using the following<br/>
 
 ```
-http://www.fillcollins.place/300 
+www.fillcollins.place/300 
 ```
 
 </p>
 <p>In addition to the usual photos, we've also added in a filter to grayscale the embedded image. Simple add a <b>g</b> into the URL like so<br />
 
 ```
-http://www.fillcollins.place/g/300
+www.fillcollins.place/g/300
 ```
 
 </p>
