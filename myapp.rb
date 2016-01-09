@@ -40,7 +40,7 @@ get '/:both/' do
   return_image(width, height)
 end
 
-et '/g/:both' do
+get '/g/:both' do
   width = params[:both].to_i
   height = params[:both].to_i
   gabba.page_view("ShowGray", "g/#{width}/#{height}")
