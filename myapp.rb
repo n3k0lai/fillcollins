@@ -44,14 +44,14 @@ get '/g/:both' do
   width = params[:both].to_i
   height = params[:both].to_i
   gabba.page_view("ShowGray", "g/#{width}/#{height}")
-  return_image(width, height)
+  return_image(width, height, :grayscale)
 end
 
 get '/g/:both/' do
   width = params[:both].to_i
   height = params[:both].to_i
   gabba.page_view("ShowGray", "g/#{width}/#{height}")
-  return_image(width, height)
+  return_image(width, height, :grayscale)
 end
 
 get '/:width/:height' do
@@ -72,14 +72,14 @@ get '/g/:width/:height' do
   width = params[:width].to_i
   height = params[:height].to_i
   gabba.page_view("ShowGray", "g/#{width}/#{height}")
-  return_image(width,height,:grayscale)
+  return_image(width, height, :grayscale)
 end
 
 get '/g/:width/:height/' do
   width = params[:width].to_i
   height = params[:height].to_i
   gabba.page_view("ShowGray", "g/#{width}/#{height}")
-  return_image(width,height,:grayscale)
+  return_image(width, height, :grayscale)
 end
 private
 	def check_sizes
