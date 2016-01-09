@@ -5,7 +5,6 @@ GEM
     daemons (1.2.3)
     eventmachine (1.0.8)
     excon (0.45.4)
-    gabba (1.0.1)
     heroku (3.42.21)
       heroku-api (= 0.3.23)
       launchy (= 2.4.3)
@@ -51,7 +50,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  gabba
   heroku
   newrelic_rpm
   rmagick

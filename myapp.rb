@@ -2,7 +2,6 @@ set :public_folder, File.dirname(__FILE__) + '/public'
 set :generated_images_folder, File.dirname(__FILE__) + '/images/generated'
 set :images_folder, File.dirname(__FILE__) + '/images/source'
 set :static_cache_control, [:public, :max_age => 300]
-gabba = Gabba::Gabba.new("UA-33854875-1", "fill-murray.com")
 
 before do
   pass if request.path. == '/'
@@ -29,56 +28,48 @@ end
 get '/:both' do
   width = params[:both].to_i
   height = params[:both].to_i
-  gabba.page_view("Show", "#{width}/#{height}")
   return_image(width, height)
 end
 
 get '/:both/' do
   width = params[:both].to_i
   height = params[:both].to_i
-  gabba.page_view("Show", "#{width}/#{height}")
   return_image(width, height)
 end
 
 get '/g/:both' do
   width = params[:both].to_i
   height = params[:both].to_i
-  gabba.page_view("ShowGray", "g/#{width}/#{height}")
   return_image(width, height, :grayscale)
 end
 
 get '/g/:both/' do
   width = params[:both].to_i
   height = params[:both].to_i
-  gabba.page_view("ShowGray", "g/#{width}/#{height}")
   return_image(width, height, :grayscale)
 end
 
 get '/:width/:height' do
   width = params[:width].to_i
   height = params[:height].to_i
-  gabba.page_view("Show", "#{width}/#{height}")
   return_image(width, height)
 end
 
 get '/:width/:height/' do
   width = params[:width].to_i
   height = params[:height].to_i
-  gabba.page_view("Show", "#{width}/#{height}")
   return_image(width, height)
 end
 
 get '/g/:width/:height' do
   width = params[:width].to_i
   height = params[:height].to_i
-  gabba.page_view("ShowGray", "g/#{width}/#{height}")
   return_image(width, height, :grayscale)
 end
 
 get '/g/:width/:height/' do
   width = params[:width].to_i
   height = params[:height].to_i
-  gabba.page_view("ShowGray", "g/#{width}/#{height}")
   return_image(width, height, :grayscale)
 end
 private
