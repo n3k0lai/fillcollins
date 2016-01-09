@@ -40,6 +40,20 @@ get '/:both/' do
   return_image(width, height)
 end
 
+et '/g/:both' do
+  width = params[:both].to_i
+  height = params[:both].to_i
+  gabba.page_view("ShowGray", "g/#{width}/#{height}")
+  return_image(width, height)
+end
+
+get '/g/:both/' do
+  width = params[:both].to_i
+  height = params[:both].to_i
+  gabba.page_view("ShowGray", "g/#{width}/#{height}")
+  return_image(width, height)
+end
+
 get '/:width/:height' do
   width = params[:width].to_i
   height = params[:height].to_i
@@ -52,20 +66,6 @@ get '/:width/:height/' do
   height = params[:height].to_i
   gabba.page_view("Show", "#{width}/#{height}")
   return_image(width, height)
-end
-
-get '/c/:width/:height' do
-  width = params[:width].to_i
-  height = params[:height].to_i
-  gabba.page_view("ShowCrazy", "c/#{width}/#{height}")
-  return_image(width,height,:crazy)
-end
-
-get '/c/:width/:height/' do
-  width = params[:width].to_i
-  height = params[:height].to_i
-  gabba.page_view("ShowCrazy", "c/#{width}/#{height}")
-  return_image(width,height,:crazy)
 end
 
 get '/g/:width/:height' do
@@ -105,15 +105,13 @@ private
 
 	def return_image(width, height, *args)
 		grayscale = args.include?(:grayscale)
-		crazy = args.include?(:crazy)
-		filename = get_image_filename(width, height, grayscale, crazy)
+		filename = get_image_filename(width, height, grayscale)
     send_file filename, type: 'image/jpeg', disposition: 'inline'
 	end
 
-	def get_image_filename(width, height, grayscale=false, crazy=false)
+	def get_image_filename(width, height, grayscale=false)
 		path = []
 		path << 'grayscale' if grayscale
-		path << 'crazy' if crazy
 		path << "#{width}x#{height}.jpg"
 
     # send_file File.join(settings.public_folder, 'index.html')
@@ -121,7 +119,6 @@ private
 		return filename if FileTest.exists?(filename)
 
 		original_path = []
-		original_path << 'crazy' if crazy
 		original_path << '*.*'
     original_filename = Dir.glob(File.join(settings.images_folder, *original_path)).sample
 
