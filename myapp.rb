@@ -89,6 +89,7 @@ private
       else
         raise error 'Bad Request'
       end
+    end
 	end
 
 	def return_image(width, height, *args)
