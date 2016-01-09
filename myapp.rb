@@ -14,6 +14,20 @@ get '/' do
   send_file File.join(settings.public_folder, 'index.html')
 end
 
+get '/:both' do
+  width = params[:both].to_i
+  height = params[:both].to_i
+  gabba.page_view("Show", "#{width}/#{height}")
+  return_image(width, height)
+end
+
+et '/:both/' do
+  width = params[:both].to_i
+  height = params[:both].to_i
+  gabba.page_view("Show", "#{width}/#{height}")
+  return_image(width, height)
+end
+
 get '/:width/:height' do
   width = params[:width].to_i
   height = params[:height].to_i
