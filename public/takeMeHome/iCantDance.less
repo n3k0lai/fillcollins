@@ -1,5 +1,8 @@
+//vars
+@main: #e5b53e;
+
 body, html {
-  background: #000;
+  background: #fff;
   position: relative;
   margin: 0;
   width: 100%;
@@ -10,7 +13,7 @@ body, html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #fff;
+  color: #000;
   font-family: sans-serif;
   max-width: 340px;
   -webkit-user-select: none;
@@ -28,14 +31,14 @@ body, html {
       transform: skewY(-5deg);
       transition: 0.4s ease-in-out all;
       &:hover {
-        text-shadow: 20px 20px 0 fade(#afd33d, 10%);
+        text-shadow: 20px 20px 0 fade(@main, 10%);
       }
       @media (max-width: 300px) {
         font-size: 50vw;
       }
     }
     h3 {
-      color: #afd33d;
+      color: @main;
       font-size: 0.9em;
       font-weight: lighter;
       line-height: 1;
@@ -53,11 +56,10 @@ body, html {
     a {
       position: relative;
       flex: 1;
-      color: rgba(255, 255, 255, 0.6);
+      color: rgba(0, 0, 0, 0.6);
       text-decoration: none;
       border-radius: 3px;
-      border: 1px solid rgba(255, 255, 255, 0.6);
-      margin: 0 20px;
+      border: 1px solid rgba(0, 0, 0, 0.6);
       text-align: center;
       padding: 10px 0;
       overflow: hidden;
@@ -81,7 +83,7 @@ body, html {
       span {
         content:'';
         position: absolute;
-        background: #afd33d;
+        background: @main;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
@@ -96,7 +98,7 @@ body, html {
         }
 
         &:active {
-          background: lighten(#afd33d, 10%);
+          background: lighten(@main, 10%);
         }
       }
     }
