@@ -15,7 +15,7 @@ body, html {
   transform: translate(-50%, -50%);
   color: #000;
   font-family: sans-serif;
-  max-width: 340px;
+  max-width: 540px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -o-user-select: none;
@@ -39,7 +39,8 @@ body, html {
     }
     h3 {
       color: @main;
-      font-size: 0.9em;
+      font-size: 1em;
+      font-weight: 400;
       font-weight: lighter;
       line-height: 1;
       @media (max-width: 300px) {
@@ -72,16 +73,14 @@ body, html {
       }
 
       &:hover {
-        border: 1px solid rgba(255, 255, 255, 1);
-        color: #121212;
+        color: fade(#121212, 80%);
 
         span {
-          width: 310px;
-          height: 310px;
+          width: 50vh;
+          height: 50vh;
         }
       }
       span {
-        content:'';
         position: absolute;
         background: @main;
         top: 50%;
@@ -105,7 +104,7 @@ body, html {
     .legal {
       text-align: center;
       flex: 3;
-      color: fade(#ccc, 50%);
+      color: fade(#121212, 80%);
 
       @media (max-width: 300px) {
         font-size: 4vw;
