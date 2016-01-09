@@ -72,11 +72,23 @@ get '/g/:width/:height/' do
 end
 private
 	def check_sizes
+
     matches = /\/(\d+)\/(\d+)/.match(request.path)
-		width = matches[1].to_i
-		height = matches[2].to_i
-    raise error 'Bad Request' if height == nil || width == nil || height < 1 || width < 1
-    raise error 'Too Large' if height > 3500 || width > 3500
+    if matches.length != 0
+  		width = matches[1].to_i
+  		height = matches[2].to_i
+      raise error 'Bad Request' if height == nil || width == nil || height < 1 || width < 1
+      raise error 'Too Large' if height > 3500 || width > 3500
+    else
+      matches = /\/(\d+)/.match(request.path)
+      if matches.length != 0
+    		width = matches[1].to_i
+    		height = matches[1].to_i
+        raise error 'Bad Request' if height == nil || width == nil || height < 1 || width < 1
+        raise error 'Too Large' if height > 3500 || width > 3500
+      else
+        raise error 'Bad Request'
+      end
 	end
 
 	def return_image(width, height, *args)
