@@ -14,6 +14,18 @@ get '/' do
   send_file File.join(settings.public_folder, 'index.html')
 end
 
+not_found do
+  send_file File.join(settings.public_folder, '404.html')
+end
+
+error 422 do
+  send_file File.join(settings.public_folder, '422.html')
+end
+
+error 500 do
+  send_file File.join(settings.public_folder, '500.html')
+end
+
 get '/:both' do
   width = params[:both].to_i
   height = params[:both].to_i
