@@ -33,7 +33,7 @@ html, body {
   .header {
     position: relative;
     display: block;
-    background-image: linear-gradient(fade(@highlight, 40%), rgba(0, 0, 0, 0.7)), @placeholder;
+    background-image: linear-gradient(fade(@highlight, 70%),fade(lighten(@highlight, 15%), 30%)), @placeholder;
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
@@ -120,8 +120,9 @@ html, body {
         text-decoration: none;
         color: lighten(@lightFont, 15%);
         font-weight: bold;
+        transition: @defaultTransition;
         &:hover {
-          color: darken(@lightFont, 15%);
+          color: overlay(@lightFont, @highlight);
         }
       }
     }
