@@ -33,7 +33,7 @@ html, body {
   .header {
     position: relative;
     display: block;
-    background-image: linear-gradient(fade(@highlight, 70%),fade(lighten(@highlight, 15%), 30%)), @placeholder;
+    background-image: linear-gradient(@highlight, fade(lighten(@highlight, 15%), 30%)), @placeholder;
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
@@ -57,6 +57,10 @@ html, body {
     h1 {
       font-size: 5em;
       color: lighten(@darkFont, 100%);
+      display: inline-block;
+      background-color: #000;
+      vertical-align: middle;
+      padding: 0 20px;
 
       @media (max-width: 563px) {
         font-size: 13vw;
@@ -64,7 +68,12 @@ html, body {
     }
     h3 {
       font-size: 1.2em;
-      color: #ccc;
+      color: #333;
+      background-color: @highlight;
+      display: inline-block;
+      width: 56%;
+      padding: 10px 0;
+      margin-top: 15px;
 
       @media (max-width: 563px) {
         font-size: 4vmin;
