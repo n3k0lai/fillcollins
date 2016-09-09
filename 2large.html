@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html style="width: 100%; height: 100%; overflow: hidden;">
+  <head>
+    <meta charset="utf-8">
+    <title>大木</title>
+  </head>
+  <body style="width: 100%; height: 100%; margin: 0;">
+    <style media="screen">
+      @keyframes kiimochii {
+        0%, 90% { transform: translate(-50%, -50%) scale(1); opacity: 1;}
+        100% { transform: translate(-50%, -50%) scale(1.2); opacity: 0;}
+      }
+      .ookii:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        height: 100%;
+        background-image: url('https://my.mixtape.moe/auhsbl.jpg');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: kiimochii 5s linear infinite;
+        z-index: 2;
+      }
+    </style>
+    <div class="ookii" style="width: 100%; height: 100%; background-image: url('https://my.mixtape.moe/auhsbl.jpg'); background-size: contain; background-position: center; background-repeat: no-repeat;"></div>
+  </body>
+</html>
